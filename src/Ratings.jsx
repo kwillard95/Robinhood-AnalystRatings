@@ -9,6 +9,8 @@ const Wrapper = styled.div`
 padding: 4em;
 background: #1B1B1D;
 display: grid;
+width: 100%
+height: auto
 `;
 
 const RatingsTitle = styled.div`
@@ -37,6 +39,7 @@ height: 200px;
 
 const RatingCircle = styled.div`
   margin-left: 60px;
+  margin-right: 20px;
   display: table;
   float: left;
   height: 130px;
@@ -55,14 +58,15 @@ margin: 0;
 const ProgressBarContainer = styled.div`
 display: table;
 float: right;
-margin-right: 400px;
+margin-right: 500px;
 height: 200px;
 width: 430px;
 background-color: #1B1B1D;
 `;
 
 const ProgressTitle = styled.div`
-text-align: start;
+position: absolute;
+left: 365px;
 font-family: 'DINPro-Medium';
 font-size: 13px;
 `;
@@ -77,11 +81,12 @@ const Meter = styled.div`
 const MeterLabel = styled.div`
     position: absolute;
     text-align: end;
-    top: 10px;
-    left: 0;
+    bottom: -4px;
     right: 0;
     font-family: 'DINPro-Medium';
     font-size: 13px;
+    vertical-align: 0;
+    left: 0;
 `;
 
 const MeterSpan = styled.span`
@@ -103,7 +108,6 @@ const MeterSpan = styled.span`
   width: 100%;
   background: #1B1B1D;
   `;
-
 class Ratings extends React.Component {
     constructor() {
         super();
@@ -128,9 +132,9 @@ class Ratings extends React.Component {
         this.setState({color: color})
 
         if (color === `#21CE99`) {
-            this.setState({circleColor: `rgb(33, 206, 153, .3)`}) 
+            this.setState({circleColor: `rgb(33, 206, 153, .1)`}) 
         } else {
-            this.setState({circleColor: `rgb(244, 85, 49, .3)`}) 
+            this.setState({circleColor: `rgb(244, 85, 49, .1)`}) 
         }
     }
     
@@ -147,19 +151,24 @@ class Ratings extends React.Component {
                 </RatingCircle>
                 
                <ProgressBarContainer>
-               <span><ProgressTitle style={{color: this.state.color}}>Buy</ProgressTitle>
-               <Meter style={{background: this.state.circleColor}}><MeterLabel style={{color: this.state.color}}>50%</MeterLabel>
+     
+                   <ProgressTitle style={{color: this.state.color, top: '140px'}}>Buy</ProgressTitle>
+               <Meter style={{background: this.state.circleColor}} data-label="50%">
                <MeterSpan style={{width: this.state.currentData.buyRating, background: this.state.color}}></MeterSpan>
-               </Meter></span>
+               <MeterLabel style={{color: this.state.color}}>{this.state.currentData.buyRating}</MeterLabel>
+               </Meter>
                
-               <ProgressTitle style={{color: 'white'}}>Hold</ProgressTitle>
+               
+               <ProgressTitle style={{color: 'white', top: '165px'}}>Hold</ProgressTitle>
                <Meter style={{background: 'black'}}>
                <MeterSpan style={{width: this.state.currentData.HoldRating, background: 'white'}}></MeterSpan>
+               <MeterLabel style={{color: 'white'}}>{this.state.currentData.holdRating}</MeterLabel>
                </Meter>
              
-               <ProgressTitle style={{color: 'white'}}>Sell</ProgressTitle>
+               <ProgressTitle style={{color: 'white', top: '190px'}}>Sell</ProgressTitle>
                <Meter style={{background: 'black'}}>
                <MeterSpan style={{width: this.state.currentData.sellRating, background: 'white'}}></MeterSpan>
+               <MeterLabel style={{color: 'white'}}>{this.state.currentData.sellRating}</MeterLabel>
                </Meter>
 
                <ArticleContainer>

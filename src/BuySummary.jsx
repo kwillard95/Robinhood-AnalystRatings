@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 const BuySpeechBubble = styled.div `
-    background-color: rgb(255,255,255, .3);
+    background-color: rgb(0,0,0, .3);
     width: 170px;
     height: auto;
     text-align: left;
@@ -16,7 +16,7 @@ const BuySpeechBubble = styled.div `
   const SpeechBubbleArrow = styled.div`
   border-style: solid;
   position: absolute;
-  border-color: rgb(255,255,255, .3) transparent transparent rgb(255,255,255, .3);
+  border-color: rgb(0,0,0, .3) transparent transparent rgb(0,0,0, .3);
   border-width: 20px 20px 0px 2px;
   bottom: -20px;
   left: 0px;
@@ -26,11 +26,13 @@ const BuySpeechBubble = styled.div `
   font-family: 'DINPro-Medium';
   font-size: 13px;
   margin-bottom: 5px;
+  color: white;
   `;
 
   const RatingSummaryBody = styled.div`
   font-family: 'DINPro-Regular';
   font-size: 13px;
+  color: white;
   `;
 
   const ReadMore = styled.div`
@@ -42,7 +44,7 @@ const BuySpeechBubble = styled.div `
   const Source = styled.div`
   font-family: 'DINPro-Medium';
   font-size: 13px;
-  color: black;
+  color: #8c8c8e;
   margin-bottom: 20px;
   `;
 
