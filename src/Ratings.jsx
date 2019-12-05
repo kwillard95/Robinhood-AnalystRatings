@@ -20,7 +20,6 @@ class Ratings extends React.Component {
         axios.get('/ratings/5de381dbbdbfd8140c1dc3f6').then((response) => {
             this.setState({currentData: response.data});
         }).catch((err) => {
-            console.log(err);
         })
     }
     changeColor() {
@@ -50,20 +49,20 @@ class Ratings extends React.Component {
                <RatingsStyle.ProgressBarContainer>
      
                <RatingsStyle.ProgressTitle style={{color: this.state.color, top: '140px'}}>Buy</RatingsStyle.ProgressTitle>
-               <RatingsStyle.Meter style={{background: this.state.circleColor}} data-label="50%">
+               <RatingsStyle.Meter id="buy-rating" style={{background: this.state.circleColor}}>
                <RatingsStyle.MeterSpan style={{width: this.state.currentData.buyRating, background: this.state.color}}></RatingsStyle.MeterSpan>
                <RatingsStyle.MeterLabel style={{color: this.state.color}}>{this.state.currentData.buyRating}</RatingsStyle.MeterLabel>
                </RatingsStyle.Meter>
                
                
                <RatingsStyle.ProgressTitle style={{color: 'white', top: '165px'}}>Hold</RatingsStyle.ProgressTitle>
-               <RatingsStyle.Meter style={{background: 'black'}}>
+               <RatingsStyle.Meter id="hold-rating" style={{background: 'black'}}>
                <RatingsStyle.MeterSpan style={{width: this.state.currentData.HoldRating, background: 'white'}}></RatingsStyle.MeterSpan>
                <RatingsStyle.MeterLabel style={{color: 'white'}}>{this.state.currentData.holdRating}</RatingsStyle.MeterLabel>
                </RatingsStyle.Meter>
              
                <RatingsStyle.ProgressTitle style={{color: 'white', top: '190px'}}>Sell</RatingsStyle.ProgressTitle>
-               <RatingsStyle.Meter style={{background: 'black'}}>
+               <RatingsStyle.Meter id="sell-rating" style={{background: 'black'}}>
                <RatingsStyle.MeterSpan style={{width: this.state.currentData.sellRating, background: 'white'}}></RatingsStyle.MeterSpan>
                <RatingsStyle.MeterLabel style={{color: 'white'}}>{this.state.currentData.sellRating}</RatingsStyle.MeterLabel>
                </RatingsStyle.Meter>

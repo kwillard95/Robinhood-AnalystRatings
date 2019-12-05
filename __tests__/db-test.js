@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Rating = require('../database/Rating.js');
+require('babel-polyfill');
+
 const companyData = {
     "company" : "DuBuque, Fisher and Armstrong", 
     "buySummary" : "Odit qui enim enim accusamus numquam suscipit deleniti officiis autem. Fugit labore aut id aut qui quae sunt reiciendis. Fugit consequatur eos tempora nulla suscipit facere consequatur culpa. Earum laudantium nisi. Explicabo magnam odio esse quia. Id dolore odio adipisci quia sit minima est in.", 
@@ -12,7 +14,7 @@ const companyData = {
 describe('Company Model Test', () => {
 
     beforeAll(async () => {
-        await mongoose.connect(global.__MONGO_URI__, { useNewUrlParser: true, useCreateIndex: true }, (err) => {
+        await mongoose.connect(global.__MONGO_URI__, { useNewUrlParser: true, useCreateIndex: true , useUnifiedTopology: true }, (err) => {
             if (err) {
                 console.error(err);
                 process.exit(1);
