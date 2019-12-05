@@ -1,52 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
-
-const BuySpeechBubble = styled.div `
-    background-color: rgb(0,0,0, .3);
-    width: 170px;
-    height: auto;
-    text-align: left;
-    padding: 20px;
-    float: left;
-    margin-right: 10px;
-    position: absolute;
-    
-  `;
-
-  const SpeechBubbleArrow = styled.div`
-  border-style: solid;
-  position: absolute;
-  border-color: rgb(0,0,0, .3) transparent transparent rgb(0,0,0, .3);
-  border-width: 20px 20px 0px 2px;
-  bottom: -20px;
-  left: 0px;
-  `;
-
-  const RatingSummaryTitle = styled.div`
-  font-family: 'DINPro-Medium';
-  font-size: 13px;
-  margin-bottom: 5px;
-  color: white;
-  `;
-
-  const RatingSummaryBody = styled.div`
-  font-family: 'DINPro-Regular';
-  font-size: 13px;
-  color: white;
-  `;
-
-  const ReadMore = styled.div`
-  font-family: 'DINPro-Medium';
-  font-size: 13px;
-  margin-bottom: 20px;
-  `;
-
-  const Source = styled.div`
-  font-family: 'DINPro-Medium';
-  font-size: 13px;
-  color: #8c8c8e;
-  margin-bottom: 20px;
-  `;
+import BuySummaryStyle from './styled-components/BuySummary-style';
 
   class BuySummary extends React.Component {
       constructor(props){
@@ -67,13 +20,13 @@ const BuySpeechBubble = styled.div `
             if(this.props.summary) {
                 return(
                     <div>
-                    <RatingSummaryBody>
+                    <BuySummaryStyle.RatingSummaryBody>
                         "{this.props.summary.split(' ').splice(0,8).join(' ')}"
-                    </RatingSummaryBody>
-                        <ReadMore onClick={this.readClicked} style={{color: this.props.color}}>
+                    </BuySummaryStyle.RatingSummaryBody>
+                        <BuySummaryStyle.ReadMore onClick={this.readClicked} style={{color: this.props.color}}>
                            Read More
-                    </ReadMore>
-                    <Source>Morningstar</Source>
+                    </BuySummaryStyle.ReadMore>
+                    <BuySummaryStyle.Source>Morningstar</BuySummaryStyle.Source>
                     </div>
                     
                 )
@@ -85,13 +38,13 @@ const BuySpeechBubble = styled.div `
         } else {
             return(
                 <div>
-                <RatingSummaryBody>
+                <BuySummaryStyle.RatingSummaryBody>
                     "{this.props.summary}"
-                </RatingSummaryBody>
-                <ReadMore onClick={this.readClicked} style={{color: this.props.color}}>
+                </BuySummaryStyle.RatingSummaryBody>
+                <BuySummaryStyle.ReadMore onClick={this.readClicked} style={{color: this.props.color}}>
                      Read Less
-                </ReadMore>
-                <Source>Morningstar</Source>
+                </BuySummaryStyle.ReadMore>
+                <BuySummaryStyle.Source>Morningstar</BuySummaryStyle.Source>
                 </div>
             )
         }
@@ -101,13 +54,13 @@ const BuySpeechBubble = styled.div `
 
       render() {
           return(
-            <BuySpeechBubble>
-            <RatingSummaryTitle>
+            <BuySummaryStyle.BuySpeechBubble>
+            <BuySummaryStyle.RatingSummaryTitle>
                 Buy Summary
-            </RatingSummaryTitle>
+            </BuySummaryStyle.RatingSummaryTitle>
             {this.read()}
-            <SpeechBubbleArrow />
-        </BuySpeechBubble>   
+            <BuySummaryStyle.SpeechBubbleArrow />
+        </BuySummaryStyle.BuySpeechBubble>   
           )
       }
   }
