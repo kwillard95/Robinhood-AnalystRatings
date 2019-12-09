@@ -14,17 +14,18 @@ class SellSummary extends React.Component {
     }
 
     readClicked(e) {
+        e.preventDefault();
         this.setState({ readMore: !this.state.readMore })
         var collapse = document.getElementById("sell-collapse");
 
-        if (collapse.style.maxHeight) {
-            console.log(collapse.style.maxHeight)
-            collapse.style.maxHeight = null;
+        if (collapse.style.maxHeight !== '0px') {
+            collapse.style.maxHeight = '0px';
             e.target.innerHTML = "Read More"
         } else {
             collapse.style.maxHeight = collapse.scrollHeight + 'px';
             e.target.innerHTML = "Read Less"
         }
+
     }
 
     pointer(e) {
@@ -33,13 +34,9 @@ class SellSummary extends React.Component {
 
     read() {
         if (this.props.summary) {
-            var info;
+            var info = this.props.summary.split('.').splice(0, 2).join('.') + '.';
             var hiddenInfo = this.props.summary.split('.').splice(2, 100).join('.');
-            if (this.state.readMore === false) {
-                info = this.props.summary.split('.').splice(0, 2).join('.') + '."';
-            } else {
-                info = this.props.summary.split('.').splice(0, 2).join('.') + '.';
-            }
+
             return (
                 <div>
                     <SellSummaryStyle.RatingSummaryBody>
@@ -67,8 +64,7 @@ class SellSummary extends React.Component {
     render() {
         return (
             <div>
-
-                <SellSummaryStyle.SellSpeechBubble style={this.spring}>
+                <SellSummaryStyle.SellSpeechBubble>
                     <SellSummaryStyle.RatingSummaryTitle>
                         Sell Summary
           </SellSummaryStyle.RatingSummaryTitle>

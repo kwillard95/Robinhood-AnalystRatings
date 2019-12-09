@@ -20,6 +20,10 @@ class Ratings extends React.Component {
         this.changeColor();
         axios.get('/ratings/5de381dbbdbfd8140c1dc3eb').then((response) => {
             this.setState({ currentData: response.data });
+            var collapseBuy = document.getElementById("buy-collapse");
+            collapseBuy.style.maxHeight = '0px';
+            var collapseSell = document.getElementById("sell-collapse");
+            collapseSell.style.maxHeight = '0px';
         }).catch((err) => {
         })
     }

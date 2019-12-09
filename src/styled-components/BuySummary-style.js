@@ -34,6 +34,7 @@ BuySummaryStyle.RatingSummaryBody = styled.div`
   font-family: 'DINPro-Regular';
   font-size: 13px;
   color: white;
+  margin-bottom: 4px
   `;
 
 BuySummaryStyle.RatingSummaryHiddenBody = styled.div`
@@ -41,8 +42,9 @@ BuySummaryStyle.RatingSummaryHiddenBody = styled.div`
   font-size: 13px;
   color: white;
   overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.2s ease-out
+  max-height: 0px;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 4px
   `;
 
 BuySummaryStyle.ReadMore = styled.div`

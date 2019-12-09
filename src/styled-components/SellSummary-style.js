@@ -16,7 +16,7 @@ SellSummaryStyle.SellSpeechBubble = styled.div`
 
 SellSummaryStyle.SpeechBubbleArrow = styled.div`
   border-style: solid;
-  position: absolute;
+  position: absolute; 
   border-color: rgb(0,0,0, .3) transparent transparent rgb(0,0,0, .3);
   border-width: 20px 20px 0px 2px;
   bottom: -20px;
@@ -35,6 +35,7 @@ SellSummaryStyle.RatingSummaryBody = styled.div`
   font-family: 'DINPro-Regular';
   font-size: 13px;
   color: white;
+  margin-bottom: 4px
   `;
 
 SellSummaryStyle.RatingSummaryHiddenBody = styled.div`
@@ -42,8 +43,9 @@ SellSummaryStyle.RatingSummaryHiddenBody = styled.div`
   font-size: 13px;
   color: white;
   overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.2s ease-out
+  max-height: 0px;
+  transition: max-height 0.2s ease-out;
+  margin-bottom: 4px;
   `;
 
 SellSummaryStyle.ReadMore = styled.div`
