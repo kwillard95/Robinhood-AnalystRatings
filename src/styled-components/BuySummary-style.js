@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const BuySummaryStyle = {};
 
-BuySummaryStyle.BuySpeechBubble = styled.div `
+BuySummaryStyle.BuySpeechBubble = styled.div`
     background-color: rgb(0,0,0, .3);
     width: 170px;
     height: auto;
@@ -14,7 +14,7 @@ BuySummaryStyle.BuySpeechBubble = styled.div `
     
   `;
 
-  BuySummaryStyle.SpeechBubbleArrow = styled.div`
+BuySummaryStyle.SpeechBubbleArrow = styled.div`
   border-style: solid;
   position: absolute;
   border-color: rgb(0,0,0, .3) transparent transparent rgb(0,0,0, .3);
@@ -23,20 +23,20 @@ BuySummaryStyle.BuySpeechBubble = styled.div `
   left: 0px;
   `;
 
-  BuySummaryStyle.RatingSummaryTitle = styled.div`
+BuySummaryStyle.RatingSummaryTitle = styled.div`
   font-family: 'DINPro-Medium';
   font-size: 13px;
   margin-bottom: 5px;
   color: white;
   `;
 
-  BuySummaryStyle.RatingSummaryBody = styled.div`
+BuySummaryStyle.RatingSummaryBody = styled.div`
   font-family: 'DINPro-Regular';
   font-size: 13px;
   color: white;
   `;
 
-  BuySummaryStyle.RatingSummaryHiddenBody = styled.div`
+BuySummaryStyle.RatingSummaryHiddenBody = styled.div`
   font-family: 'DINPro-Regular';
   font-size: 13px;
   color: white;
@@ -45,13 +45,13 @@ BuySummaryStyle.BuySpeechBubble = styled.div `
   transition: max-height 0.2s ease-out
   `;
 
-  BuySummaryStyle.ReadMore = styled.div`
+BuySummaryStyle.ReadMore = styled.div`
   font-family: 'DINPro-Medium';
   font-size: 13px;
   margin-bottom: 20px;
   `;
 
-  BuySummaryStyle.Source = styled.div`
+BuySummaryStyle.Source = styled.div`
   font-family: 'DINPro-Medium';
   font-size: 13px;
   color: #8c8c8e;
@@ -59,4 +59,4 @@ BuySummaryStyle.BuySpeechBubble = styled.div `
   `;
 
 
-  export default BuySummaryStyle;
+export default BuySummaryStyle;
